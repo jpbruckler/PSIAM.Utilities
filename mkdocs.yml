@@ -1,0 +1,175 @@
+# Copyright (c) 2024-2030 DT Midstream Cybersecurity <cybersecurity@dtmidstream.com>
+
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to
+# deal in the Software without restriction, including without limitation the
+# rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+# sell copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+# IN THE SOFTWARE.
+
+# Project information
+site_name: PSIAM.Universal
+site_url: https://dtmcyberstg.z19.web.core.windows.net/projects/PSIAM.Universal
+site_description: Lightweight PowerShell Universal app for Active Directory
+
+
+# Gitea repository
+repo_url: https://gitea.dtm.dtmidstream.com/Cybersecurity/PSIAM.Universal
+repo_name: Cybersecurity/PSIAM.Universal
+
+# Copyright
+copyright: >
+  Copyright &copy; 2024 - 2030 DT Midstream Cybersecurity <cybersecurity@dtmidstream.com> –
+  <a href="#__consent">Change cookie settings</a>
+
+# Configuration
+theme:
+  name: material
+  logo: img/logo.png
+  features:
+    - announce.dismiss
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    - navigation.footer
+    - navigation.indexes
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.sections
+    - navigation.tracking
+    #- navigation.tabs
+    #- navigation.tabs.sticky
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - search.share
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch-off
+        name: Switch to system preference
+
+# Extensions
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      normalize_issue_symbols: true
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      auto_append:
+        - includes/mkdocs.md
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# Plugins configuration
+plugins:
+  - search
+
+# Extras
+extra:
+  consent:
+    title: Cookie consent
+    description: >-
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for. With your consent, you're helping us to
+      make our documentation better.
+  social:
+    - icon: fontawesome/brands/git
+      link: https://gitea.dtm.dtmidstream.com/cybersecurity
+
+# Navigation
+nav:
+  - Home: index.md
+  - Module Documentation:
+    - about_Navigation.md
+    - about_ADAdminAccount.md
+    - .universal Configuration:
+      - universal.md
+      - dashboards.ps1.md
+    - Public CmdLets:
+      - Checkpoint-PSIAMGroupCache.md
+      - Checkpoint-PSIAMUserCache.md
+      - New-PSIAMUniversalApp.md
+  - Development:
+    - developer/index.md
+    - Quickstart: developer/quickstart.md
+    - Contributing:
+      - Getting Started: developer/contributing/contributing.md
+      - Version Control Overview: developer/contributing/vc-overview.md
+      - Creating a Pull Request: developer/contributing/create-pull-request.md
+    - Setup:
+      - Setup Local Development Environment: developer/devsetup/environment-setup.md
+      - Setup shared folders for Quick Testing: developer/devsetup/setup-shared-folders.md
+    - Orientation:
+        - Directory Structure: developer/project-directory-structure.md
+    #     -
+    - Scripts:
+      - developer/scripts/index.md
+      - CreateDevToken.ps1: developer/scripts/CreateDevToken.md
+      - CreateDevNetworkShare.ps1: developer/scripts/CreateDevNetworkShare.md
+      - CreateVMSymbolicLink.ps1: developer/scripts/CreateVMSymbolicLink.md
+      - PushToDev.ps1: developer/scripts/PushToDev.md
+      - .env.example: developer/scripts/env.example.md
+      - token.xml: developer/scripts/token.xml.md
+    # - Version Control (Gitea):
+    #   - Overview: developer/contributing/index.md
+    #   - Creating a Pull Request: developer/contributing/create-pull-request.md
+  - Change Log: CHANGELOG.md
