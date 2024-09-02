@@ -7,8 +7,8 @@ $docSrcPath = (Join-Path $PSScriptRoot 'docs')
 $docRootPath = (Join-Path $PSScriptRoot 'site')
 $storageAccount = 'dtmcyberstg'
 $containerName = '$web'
-$azSubId = 'b77aaef9-396e-4bbf-9809-d485dfa65677'
-$azTenant = '644ee707-2edc-41d2-959a-887310d2fe2a'
+$azSubId = $env:DEV_AZ_SUBSCRIPTION
+$azTenant = $env:DEV_AZ_TENANT
 $missingTools = @()
 $requiredTools = @(
     @{
